@@ -12,7 +12,7 @@
   --color1: #0091eb;
   --color1box: #0088dd66;
   --color2: #ddd;
-  --color2box: rgba(204, 204, 204, 0.8);
+  --color2box: rgba(204, 204, 204, 0.9);
 }
 
 @font-face {
@@ -90,6 +90,7 @@ aside {
   display: flex;
   align-items: center;
   left: 0;
+  top: 0;
   height: 100%;
 }
 #burger-menu{
@@ -99,22 +100,27 @@ aside {
   justify-content: space-between;
   height: 65px;
   width: 65px;
-  background: var(--color2);
-  color: var(--color1);
-  border-radius: 6rem;
-  box-shadow: #a2a2a2 0 -4px 2px 1px inset, #2e2d2d66 0 2px 4px,
-    #2e2d2db5 0 7px 7px -3px;
   transition: all 0.3s;
   z-index: 9;
   cursor: pointer;
   display: none;
+  border-radius: 6rem;
 }
-#burger-menu:hover{
+
+.inactive-burger{
+  background: var(--color2);
+  color: var(--color1);
+  box-shadow: #a2a2a2 0 -4px 2px 1px inset, #2e2d2d66 0 2px 4px,
+    #2e2d2db5 0 7px 7px -3px;
+}
+
+.active-burger{
   background: var(--color1);
   color: var(--color2);
   transform: translateY(4px);
   box-shadow: #3f3f3f84 0 2px 7px 4px inset;
 }
+
 #navbar {
   list-style-type: none;
   display: flex;
@@ -445,6 +451,12 @@ aside {
   text-align: center;
 }
 
+.footer-end-txt a{
+  color: var(--color2);
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+}
+
 /*********************************************************************/
 
 /* media queries */
@@ -482,13 +494,12 @@ aside {
   aside{
     align-items: flex-start;
     z-index: 9999;
-  }
-  #navbar{
-    height: 80px;
+    height: 85px;
     overflow: hidden;
-    transition: all .5s;
+    transition: height .5s linear;
   }
-  #navbar:hover{
+  .full-aside{
     height: 100%;
   }
+  
 }
