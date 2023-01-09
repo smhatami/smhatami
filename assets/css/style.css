@@ -216,7 +216,7 @@ aside {
 #hero-path {
   padding: 5rem 0 1rem 0;
   background: var(--color1);
-  position:sticky;
+  position: relative;
   bottom: 0;
   height: auto;
   width: 100%;
